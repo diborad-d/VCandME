@@ -1,9 +1,10 @@
 import React from 'react';
 
-function Header() {
 
+function Header(props) {
   return (
-      <header>Virtual Closet</header>
+      <h1>{props.title}</h1>
+
   )
 }
 
