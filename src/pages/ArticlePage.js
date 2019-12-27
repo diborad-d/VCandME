@@ -27,9 +27,9 @@ class ArticlePage extends React.Component {
         <h1>
           ArticlePage
         </h1>
-         <span><HomeBtn title="Show All" className="btn" link="#" /></span>
-         <span><HomeBtn title="Filter Tops" className="btn" link="#" /></span>
-        `<span><HomeBtn title="Filter Bottoms" className="btn" link="#" /></span>
+          <span><HomeBtn title="Show All" className="btn" link="#" /></span>
+          <span><HomeBtn title="Filter Tops" className="btn" link="#" /></span>
+          <span><HomeBtn title="Filter Bottoms" className="btn" link="#" /></span>
         <div  className="container">
         <div className="carousel" style={styles.carouselStyle}>
           {/*filter articles from dB */}
@@ -50,7 +50,7 @@ class ArticlePage extends React.Component {
               goesWith={article.goesWith}
             />)
             })}
-            <ArticleCarouselItem />
+            
           
           
           
