@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "bulma": "^0.8.0",
     "dotenv": "^8.2.0",
+    "config": "^3.2.4",
     "node-sass": "^4.13.0",
     "pug": "^2.0.4",
     "react": "^16.12.0",
