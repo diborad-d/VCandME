@@ -1,29 +1,22 @@
-import React from 'react';
-import HomeBtn from '../components/HomeBtn';
+import React from "react";
+import HomeBtn from "../components/HomeBtn";
 
 class ArticlePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state= {
-
-    }
-  }
+    this.state = {};
+  }Q
 
   render() {
     return (
       <div>
-        <h1>
-          ClosetPage
-        </h1>
-        
-        <span><HomeBtn title="Home" className="btn" link="./" /></span>
-
+        <h1>ClosetPage</h1>
+        <span>
+          <HomeBtn title="Home" className="btn" link="./" />
+        </span>
       </div>
-        
-
-    )
+    );
   }
-
 }
 
 export default ArticlePage;

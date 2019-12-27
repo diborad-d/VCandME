@@ -6,14 +6,25 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.0",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-validator": "^6.3.0",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.8.3",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
+    "request": "^2.88.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server",
+    "server": "nodemon server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -33,5 +44,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "## MVP    - [ ] Utility: Allows users to inventory wardrobe and save oufits   - [ ] React.js   - [ ] MongoDB with Mongoose ORM   - [ ] GET routes   - [ ] POST routes   - [ ] Deploy to Heroku   - [ ] Two Technologies not talkied about in class   - [ ] Authentication Users   - [ ] Polished Frontend   - [ ] MVC Paradigm   - [ ] Good quaility coding standards   - [ ] Protect sensitive API keys",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diborad-d/VCandME.git"
+  },
+  "author": "Dibora Dagne Jeremy Jones Santiago Turbe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diborad-d/VCandME/issues"
+  },
+  "homepage": "https://github.com/diborad-d/VCandME#readme"
 }
