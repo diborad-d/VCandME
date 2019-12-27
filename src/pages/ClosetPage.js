@@ -15,9 +15,7 @@ class ArticlePage extends React.Component {
         <h1>
           ClosetPage
         </h1>
-        {/* <div className="carousel">
-          <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"/></a>
-        </div> */}
+        
         <span><HomeBtn title="Home" className="btn" link="./" /></span>
 
       </div>
