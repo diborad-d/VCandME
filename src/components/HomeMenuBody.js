@@ -30,7 +30,7 @@ function HomeMenuBody(props) {
     title=props.title,
     link=props.link
 
-    console.log(img)
+   
 
   return (
     <div style={styles.bodyStyle}>
