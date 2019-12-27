@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -8,11 +9,13 @@ import HomePage from "./pages/HomePage";
 import ClosetPage from "./pages/ClosetPage";
 import OutfitPage from "./pages/OutfitPage";
 import ArticlePage from "./pages/ArticlePage";
+
 import './App.css';
 
 
 function App() {
   return (
+
     <Router>
       <div>
         <Switch>
@@ -31,6 +34,7 @@ function App() {
       </Switch>
       </div>
     </Router>
+
   );
 }
 
