@@ -13,8 +13,7 @@ class ArticlePage extends React.Component {
 
   
   render() {
- 
-  
+
     const styles = {
       // config these style using sass
       carouselStyle: {
@@ -52,23 +51,15 @@ class ArticlePage extends React.Component {
               goesWith={article.goesWith}
             />)
             })}
-
-          
-          
-          
         </div>
 
         </div>
-       
-
-
+      
         <span><HomeBtn title="Home" className="btn" link="./" /></span>
         <span><HomeBtn title="New" className="btn" link="#" /></span>
         <span><HomeBtn title="Burn Everything" className="btn" link="#" /></span>
 
       </div>
-        
-
     )
   }
 
