@@ -8,9 +8,7 @@ import  {outfit1 } from '../outfits.json'
 class ArticlePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state= {
-
-    }
+    this.state = {};
   }
 
   render() {
@@ -77,11 +75,8 @@ class ArticlePage extends React.Component {
         </div>
 
       </div>
-        
-
-    )
+    );
   }
-
 }
 
 export default ArticlePage;
