@@ -4,10 +4,7 @@ import { useAuth0 } from './contexts/auth0-context';
 import Header from './components/Header';
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-} from "react-router-dom";
+  BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ClosetPage from "./pages/ClosetPage";
 import OutfitPage from "./pages/OutfitPage";
@@ -29,7 +26,7 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/closetPage">
+        <Route exact path="/closetPage" component= { ClosetPage}>
           <ClosetPage />
         </Route>
         <Route exact path="/outfitPage">

@@ -1,22 +1,21 @@
 import React from "react";
-import HomeBtn from "../components/HomeBtn";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { render } from "@testing-library/react";
+import ArticlePage from "./ArticlePage";
 
-class ArticlePage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return (
-      <div>
-        <h1>ClosetPage</h1>
+const ClosetPage = () => {
+  // state
 
-        <span>
-          <HomeBtn title="Home" className="btn" link="./" />
-        </span>
-      </div>
-    );
-  }
-}
+  return (
+    <Router>
+      <Switch>
+        <Route exact path= '/' component= { ArticlePage}>
+          <h1>Closet page</h1>
+        </Route>
+        <ArticlePage />
+      </Switch>
+    </Router>
+  );
+};
 
-export default ArticlePage;
+export default ClosetPage;
