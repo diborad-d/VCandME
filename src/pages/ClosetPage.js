@@ -11,6 +11,10 @@ const ClosetPage = () => {
       <Switch>
         <Route exact path= '/' component= { ArticlePage}>
           <h1>Closet page</h1>
+
+      
+
+
         </Route>
         <ArticlePage />
       </Switch>

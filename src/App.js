@@ -26,7 +26,7 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/closetPage" component= { ClosetPage}>
+        <Route exact path="/ClosetPage" component= { ClosetPage}>
           <ClosetPage />
         </Route>
         <Route exact path="/outfitPage">

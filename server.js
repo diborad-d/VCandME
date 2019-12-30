@@ -10,8 +10,8 @@ app.get("/", (req, res) => res.send("API Running"));
 
 //define routes
 
-app.use('/API/user', require('./routes/API/user'));
-
+// app.use('/src/components, require('./src/component/ClosetPage'));
+app.use(routes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`server started on port ${PORT}`));
