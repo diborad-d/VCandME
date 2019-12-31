@@ -9,7 +9,7 @@ class ClosetPage extends React.Component {
 
   render() {
     const container = {
-      marginTop: "5%",
+      margin: "3% 10%"
       // width: '100%',
       // height: '50hv'
     };
@@ -17,54 +17,88 @@ class ClosetPage extends React.Component {
       display: "inline-block",
       background: "lightPink",
       height: "800px",
-      width: "50%",
+      width: "40%",
       marginTop: "1%",
       verticalAlign: "top",
-      paddingBottom:' 5%'
-
+      paddingBottom: " 5%"
     };
     const leftSide = {
       display: "inline-block",
       background: "lightBlue",
       height: "800px",
-      width: "40%",
+      width: "30%",
       marginTop: "1%",
-      marginRight: '5%',
+      marginRight: "5%",
       verticalAlign: "top"
     };
     const carousel = {
-     height : '300px'
-    }
+      height: "300px"
+    };
     return (
-      <div className="container" style={container}>
+      <div classNameName="container" style={container}>
         <div style={leftSide}>
-          <div className="col-md-6 ">
-            <div className="d-flex justify-content-center align-items-center">
-              <h3>Your Closet</h3>
+          <div classNameName="col-md-6 ">
+            <div classNameName="d-flex justify-content-center align-items-center">
+              <h3>Your Fitting Room</h3>
+
+              <div className="row">
+                <div className="col s12 m7">
+                  <img src="https://lorempixel.com/250/250/nature/2" />
+                  <div className="links">
+                  <a class="waves-effect waves-light btn">Save</a>
+                  <a class="waves-effect waves-light btn">Remove</a>
+                  </div>
+                </div>
+              </div>
+              <hr/>
+              <div className="row">
+                <div className="col s12 m7">
+                  <img src="https://lorempixel.com/250/250/nature/2" />
+                  <div className="links">
+                  <a class="waves-effect waves-light btn">Save</a>
+                  <a class="waves-effect waves-light btn">Remove</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         <div style={rightSide}>
-          <div className="col-md-6 ">
-            <div className="d-flex justify-content-center align-items-center">
+          <div classNameName="col-md-6 ">
+            <div classNameName="d-flex justify-content-center align-items-center">
               <h3>Your Closet</h3>
-            <div class="carousel" style = {carousel}>
-              {/* <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"/></a> */}
-              <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"/></a>
-              <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3/"/></a>
-              <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"/></a>
-              <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"/></a>
-              
-            </div>
-           <hr/>
-            <div class="carousel" style = {carousel}>
-              {/* <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"/></a> */}
-              <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"/></a>
-              <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3/"/></a>
-              <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"/></a>
-              <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"/></a>
-            </div>
+              <div className="carousel" style={carousel}>
+                {/* <a className="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"/></a> */}
+                <a className="carousel-item" href="#two!">
+                  <img src="https://lorempixel.com/250/250/nature/2" />
+                </a>
+                <a className="carousel-item" href="#three!">
+                  <img src="https://lorempixel.com/250/250/nature/3/" />
+                </a>
+                <a className="carousel-item" href="#four!">
+                  <img src="https://lorempixel.com/250/250/nature/4" />
+                </a>
+                <a className="carousel-item" href="#five!">
+                  <img src="https://lorempixel.com/250/250/nature/5" />
+                </a>
+              </div>
+              <hr />
+              <div className="carousel" style={carousel}>
+                {/* <a className="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"/></a> */}
+                <a className="carousel-item" href="#two!">
+                  <img src="https://lorempixel.com/250/250/nature/2" />
+                </a>
+                <a className="carousel-item" href="#three!">
+                  <img src="https://lorempixel.com/250/250/nature/3/" />
+                </a>
+                <a className="carousel-item" href="#four!">
+                  <img src="https://lorempixel.com/250/250/nature/4" />
+                </a>
+                <a className="carousel-item" href="#five!">
+                  <img src="https://lorempixel.com/250/250/nature/5" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
