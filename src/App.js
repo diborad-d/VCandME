@@ -29,10 +29,10 @@ function App() {
         <Route exact path="/ClosetPage" component= { ClosetPage}>
           <ClosetPage />
         </Route>
-        <Route exact path="/outfitPage">
+        <Route exact path="/OutfitPage">
           <OutfitPage />
         </Route>
-        <Route exact path="/articlePage">
+        <Route exact path="/ArticlePage">
           <ArticlePage />
         </Route>
         <Route exact path="/auth">
