@@ -45,18 +45,18 @@ class ClosetPage extends React.Component {
                 <div className="col s12 m7">
                   <img src="https://lorempixel.com/250/250/nature/2" />
                   <div className="links">
-                  <a class="waves-effect waves-light btn">Save</a>
-                  <a class="waves-effect waves-light btn">Remove</a>
+                    <a class="waves-effect waves-light btn">Save</a>
+                    <a class="waves-effect waves-light btn">Remove</a>
                   </div>
                 </div>
               </div>
-              <hr/>
+              <hr />
               <div className="row">
                 <div className="col s12 m7">
                   <img src="https://lorempixel.com/250/250/nature/2" />
                   <div className="links">
-                  <a class="waves-effect waves-light btn">Save</a>
-                  <a class="waves-effect waves-light btn">Remove</a>
+                    <a class="waves-effect waves-light btn">Save</a>
+                    <a class="waves-effect waves-light btn">Remove</a>
                   </div>
                 </div>
               </div>
@@ -69,7 +69,6 @@ class ClosetPage extends React.Component {
             <div classNameName="d-flex justify-content-center align-items-center">
               <h3>Your Closet</h3>
               <div className="carousel" style={carousel}>
-                {/* <a className="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"/></a> */}
                 <a className="carousel-item" href="#two!">
                   <img src="https://lorempixel.com/250/250/nature/2" />
                 </a>
@@ -85,7 +84,6 @@ class ClosetPage extends React.Component {
               </div>
               <hr />
               <div className="carousel" style={carousel}>
-                {/* <a className="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"/></a> */}
                 <a className="carousel-item" href="#two!">
                   <img src="https://lorempixel.com/250/250/nature/2" />
                 </a>
