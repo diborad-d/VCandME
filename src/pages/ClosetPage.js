@@ -39,10 +39,10 @@ class ClosetPage extends React.Component {
       fontFamily: 'Roboto Slab, serif'
     }
     return (
-      <div classNameName="container" style={container}>
+      <div className="container" style={container}>
         <div style={leftSide}>
-          <div classNameName="col-md-6 ">
-            <div classNameName="d-flex justify-content-center align-items-center">
+          <div className="col-md-6 ">
+            <div className="d-flex justify-content-center align-items-center">
               <div>
               <p style={p}>Your Fitting Room</p>
               </div>
@@ -50,8 +50,8 @@ class ClosetPage extends React.Component {
                 <div className="col s12 m7">
                   <img src="https://lorempixel.com/250/250/nature/2" />
                   <div className="links">
-                    <a class="waves-effect waves-light btn">Save</a>
-                    <a class="waves-effect waves-light btn">Remove</a>
+                    <a className="waves-effect waves-light btn">Save</a>
+                    <a className="waves-effect waves-light btn">Remove</a>
                   </div>
                 </div>
               </div>
@@ -60,8 +60,8 @@ class ClosetPage extends React.Component {
                 <div className="col s12 m7">
                   <img src="https://lorempixel.com/250/250/nature/2" />
                   <div className="links">
-                    <a class="waves-effect waves-light btn">Save</a>
-                    <a class="waves-effect waves-light btn">Remove</a>
+                    <a className="waves-effect waves-light btn">Save</a>
+                    <a className="waves-effect waves-light btn">Remove</a>
                   </div>
                 </div>
               </div>
@@ -70,8 +70,8 @@ class ClosetPage extends React.Component {
         </div>
 
         <div style={rightSide}>
-          <div classNameName="col-md-6 ">
-            <div classNameName="d-flex justify-content-center align-items-center">
+          <div className="col-md-6 ">
+            <div className="d-flex justify-content-center align-items-center">
               <div>
               <p style={p}> Your Closet</p>
               </div>
