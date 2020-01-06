@@ -1,7 +1,8 @@
-import React, {ComponentSpec} from 'react';
+import React, {Component} from 'react';
 import { Link } from "react-router-dom";
 import {Input, TextArea, FormBtn } from "../components/Form"; 
 import API from "../utils/API";
+import { Col, Row, Container } from "../components/Grid";
 
 const styles ={
     imageBtnStyle: {
@@ -21,6 +22,7 @@ class InputItem extends Component {
             people: "",
             topOrBottom: "",
             image: "",
+            email: "",
         };
     }
 
@@ -41,7 +43,8 @@ class InputItem extends Component {
             date: this.state.date,
             people: this.state.people,
             topOrBottom: this.state.topOrBottom,
-            image: this.state.image
+            image: this.state.image,
+            email: this.state.email
           })
             .then(res => console.log(res))
             .catch(err => console.log(err));
@@ -49,12 +52,13 @@ class InputItem extends Component {
 
 
     render() {
+        return(
         <Container fluid>
             <h2>Input Outfit Information</h2>
             <Input
                 name="date"
                 value={this.state.date}
-                placeholder="Enter Date Worn"
+                type="date"
                 onChange={this.handleInputChange}
             />
             <Input
@@ -86,6 +90,7 @@ class InputItem extends Component {
                 Save Item
             </FormBtn>
         </Container>
+        )
     }
 
 }

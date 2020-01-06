@@ -2,7 +2,8 @@ import React from 'react';
 import HomeBtn from '../components/HomeBtn';
 import ImageInput from '../components/ImageInput';
 import ArticleCarouselItem from '../components/ArticleCarouselItem';
-import articlesInfo from '../articles.json'
+import articlesInfo from '../articles.json';
+import Modal from '../components/Modal';
 
 class ArticlePage extends React.Component {
   constructor(props) {
@@ -12,7 +13,19 @@ class ArticlePage extends React.Component {
     }
   }
 
+  state = {
+    show: false
+    };
+
+    showModal = e => {
+      this.setState({
+        show: !this.state.show   //toggles the show state
+      });
+
+
+    };
   
+
   render() {
  
   
@@ -21,6 +34,9 @@ class ArticlePage extends React.Component {
       carouselStyle: {
         height: "500px",
         display: "flex"
+      },
+      homeBtnStyle: {
+        width: "200px"
       }
     }
     return (
@@ -58,7 +74,9 @@ class ArticlePage extends React.Component {
           </div>
 
           <div>
-            <ImageInput></ImageInput>
+          <Modal onClose={this.showModal} show={this.state.show}>
+            <ImageInput/>
+          </Modal>
           </div>
 
         </div>
@@ -66,7 +84,15 @@ class ArticlePage extends React.Component {
 
 
         <span><HomeBtn title="Home" className="btn" link="./" /></span>
-        <span><HomeBtn title="New" className="btn" link="#" /></span>
+        <span><button 
+          title="New" 
+            className="btn"
+            style={styles.homeBtnStyle}
+            onClick={ e => {
+              this.setState({
+                show: true
+              });
+            }}>ADD ITEM</button></span>
         <span><HomeBtn title="Burn Everything" className="btn" link="#" /></span>
 
       </div>

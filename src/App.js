@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import 'bulma/css/bulma.css';
 import { useAuth0 } from './contexts/auth0-context';
+import Modal from "./components/Modal";
 import Header from './components/Header';
 
 import {

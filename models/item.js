@@ -3,11 +3,13 @@ const Schema = mongoose.Schema;
 
 const itemSchema = new Schema({
   type: { type: String, required: true },
-  color: { type: String, required: true },
-  date: { type: Date, default: Date.now },
+  color: String,
+  dateCreated: { type: Date, default: Date.now },
+  date: String,
   people: String,
   topOrBottom: String,
   image: String,
+  email: String,
 });
 
 const Item = mongoose.model("Item", itemSchema);
