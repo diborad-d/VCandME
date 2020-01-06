@@ -4,6 +4,7 @@ import ImageInput from '../components/ImageInput';
 import ArticleCarouselItem from '../components/ArticleCarouselItem';
 import articlesInfo from '../articles.json';
 import Modal from '../components/Modal';
+import Header from '../components/Header';
 
 class ArticlePage extends React.Component {
   constructor(props) {
@@ -28,7 +29,6 @@ class ArticlePage extends React.Component {
 
   render() {
  
-  
     const styles = {
       // config these style using sass
       carouselStyle: {
@@ -40,7 +40,9 @@ class ArticlePage extends React.Component {
       }
     }
     return (
+      
       <div>
+        <Header title="Article Page" />
         <h1>
           ArticlePage
         </h1>

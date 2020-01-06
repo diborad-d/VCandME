@@ -4,13 +4,16 @@ import {Input, TextArea, FormBtn } from "../components/Form";
 import API from "../utils/API";
 import { Col, Row, Container } from "../components/Grid";
 
+
 const styles ={
     imageBtnStyle: {
         width: "200px"
     }
 }
 
+
 class InputItem extends Component {
+
     
     constructor(props){
         super(props);
@@ -26,7 +29,9 @@ class InputItem extends Component {
         };
     }
 
-    componentDidMount(){}
+    componentDidMount(){
+
+    }
     
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -37,6 +42,8 @@ class InputItem extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
+        let email = localStorage.getItem("currentUser");
+    
           API.saveItem({
             title: this.state.type,
             color: this.state.color,
@@ -44,7 +51,7 @@ class InputItem extends Component {
             people: this.state.people,
             topOrBottom: this.state.topOrBottom,
             image: this.state.image,
-            email: this.state.email
+            email: email
           })
             .then(res => console.log(res))
             .catch(err => console.log(err));
