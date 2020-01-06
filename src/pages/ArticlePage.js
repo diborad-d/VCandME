@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeBtn from '../components/HomeBtn';
+import ImageInput from '../components/ImageInput';
 import ArticleCarouselItem from '../components/ArticleCarouselItem';
 import articlesInfo from '../articles.json'
 
@@ -31,30 +32,34 @@ class ArticlePage extends React.Component {
           <span><HomeBtn title="Filter Tops" className="btn" link="#" /></span>
           <span><HomeBtn title="Filter Bottoms" className="btn" link="#" /></span>
         <div  className="container">
-        <div className="carousel" style={styles.carouselStyle}>
-          {/*filter articles from dB */}
-          {/*map articles and pass props from dB */}
-          {/*materialbox image to zoom on article */}
-          {Object.values(articlesInfo).map( article => {
-            const keywords = article.keywords
+          <div className="carousel" style={styles.carouselStyle}>
+            {/*filter articles from dB */}
+            {/*map articles and pass props from dB */}
+            {/*materialbox image to zoom on article */}
+            {Object.values(articlesInfo).map( article => {
+              const keywords = article.keywords
+              
+              
+      
+              return (<ArticleCarouselItem 
+                name={article.name}
+                key={article.id}
+                id={article.id}
+                type={article.type}
+                image={article.image}
+                keywords={article.keywords}
+                goesWith={article.goesWith}
+              />)
+              })}
+              
             
             
-    
-            return (<ArticleCarouselItem 
-              name={article.name}
-              key={article.id}
-              id={article.id}
-              type={article.type}
-              image={article.image}
-              keywords={article.keywords}
-              goesWith={article.goesWith}
-            />)
-            })}
             
-          
-          
-          
-        </div>
+          </div>
+
+          <div>
+            <ImageInput></ImageInput>
+          </div>
 
         </div>
        
