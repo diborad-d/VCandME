@@ -16,7 +16,9 @@ import ArticlePage from "./pages/ArticlePage";
 
 
 import './App.css';
+import HomeBtn from './components/HomeBtn';
 
+// import user here
 
 function App() {
   const { isLoading, user, loginWithRedirect, logout } = useAuth0();
@@ -26,18 +28,13 @@ function App() {
     <Router>
       <div>
         <Switch>
-        <Route exact path="/">
-          <HomePage />
-        </Route>
-        <Route exact path="/closetPage">
-          <ClosetPage />
-        </Route>
-        <Route exact path="/outfitPage">
-          <OutfitPage />
-        </Route>
-        <Route exact path="/articlePage">
-          <ArticlePage />
-        </Route>
+
+
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/closetPage" component={ClosetPage} />
+        <Route exact path="/outfitPage" component={OutfitPage} />
+        <Route exact path="/articlePage" component={ArticlePage} />
+       
         <Route exact path="/auth">
           <>
           <Header />

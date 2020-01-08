@@ -10,6 +10,7 @@ export const Auth0Context = createContext();
 // export the context as useAuth0
 export const useAuth0 = () => useContext(Auth0Context); 
 
+
 // create a provider
 export class Auth0Provider extends Component {
     state = {
@@ -41,6 +42,12 @@ export class Auth0Provider extends Component {
         const isAuthenticated = await auth0Client.isAuthenticated();
         const user = isAuthenticated ? await auth0Client.getUser() : null;
         this.setState({ isLoading: false, isAuthenticated, user });
+
+        if(user != null){
+          localStorage.setItem("currentUser", user.email);
+        } else {
+          localStorage.removeItem("currentUser");
+        }
       };
 
 
@@ -50,8 +57,16 @@ export class Auth0Provider extends Component {
         await this.state.auth0Client.handleRedirectCallback();
         const user = await this.state.auth0Client.getUser();
 
+        if(user != null){
+          localStorage.setItem("currentUser", user.email);
+        } else {
+          localStorage.removeItem("currentUser");
+        }
+
         this.setState({ user, isAuthenticated: true, isLoading: false });
         window.history.replaceState({}, document.title, window.location.pathname);
+
+        
     };
 
 
@@ -76,3 +91,5 @@ export class Auth0Provider extends Component {
         );
       }
 }
+
+export default Auth0Provider;
