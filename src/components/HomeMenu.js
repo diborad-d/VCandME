@@ -1,4 +1,11 @@
 import React from 'react';
+import{
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Redirect,
+  Switch,
+} from "react-router-dom";
 import HomeMenuBody from './HomeMenuBody';
 import homeMenuInfo from '../homeMenuBody.json'
 
@@ -38,7 +45,13 @@ function HomeMenu() {
             />
           </div>
         </li>
-  
+        <li>
+          <div className="collapsible-header" id="login-btn">
+            <i className="large material-icons">lock</i>
+            <Link to="/auth">Account</Link>
+          </div>
+        </li>
+
       </ul>
   )
 }
