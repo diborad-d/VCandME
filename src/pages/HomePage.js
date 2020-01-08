@@ -5,11 +5,13 @@ import HomeMenu from '../components/HomeMenu';
 
 
 function HomePage() {
+
   return (
     <div className="container">
        <Header title="Virtual Closet"/>
        <HomeMenu /> 
     </div>
+
   );
 }
 
