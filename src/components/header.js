@@ -29,7 +29,7 @@ export default function Header() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h4" className={classes.title}>
-          Vitual Closet
+          Virtual Closet
         </Typography>
         <Button color="inherit">Login</Button>
       </Toolbar>
