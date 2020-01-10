@@ -22,7 +22,7 @@ export default class Modal extends React.Component {
                         this.onClose(e);
                     }}
                 >
-                    X
+                    CLOSE
                 </button>
             </div>
             

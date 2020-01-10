@@ -1,6 +1,7 @@
 import React from 'react';
 import HomeBtn from '../components/HomeBtn';
 import ImageInput from '../components/ImageInput';
+import FileUpload from '../components/files-upload-component';
 import ArticleCarouselItem from '../components/ArticleCarouselItem';
 import articlesInfo from '../articles.json';
 import Modal from '../components/Modal';
@@ -81,7 +82,7 @@ class ArticlePage extends React.Component {
 
           <div>
           <Modal onClose={this.showModal} show={this.state.show}>
-            <ImageInput/>
+            <FileUpload/>
           </Modal>
           
 
