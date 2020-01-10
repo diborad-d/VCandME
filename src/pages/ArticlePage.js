@@ -59,9 +59,9 @@ class ArticlePage extends React.Component {
           </div>
 
           <div>
-            <Modal onClose={this.showModal} show={this.state.show}>
-              <ImageInput />
-            </Modal>
+          <Modal onClose={this.showModal} show={this.state.show}>
+            <FileUpload/>
+          </Modal>
           </div>
         </div>
 

@@ -25,3 +25,14 @@ export function FormBtn(props) {
     </button>
   );
 }
+
+export function DropDown(props){
+  return(
+    <div className="form-group">
+      <select {...props} >
+        <option value="top">Top</option>
+        <option value="bottom">Bottom</option>
+      </select>
+    </div>
+  )
+}
