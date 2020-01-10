@@ -2,7 +2,7 @@ import React from "react";
 import HomeBtn from "../components/HomeBtn";
 import EventListItem from "../components/EventListItem";
 import { outfit1 } from "../outfits.json";
-import Header from "../components/Header";
+import Header from "../components/Header.component";
 
 class ArticlePage extends React.Component {
   constructor(props) {

@@ -1,10 +1,10 @@
 import React from "react";
 import HomeBtn from "../components/HomeBtn";
-import ImageInput from "../components/ImageInput";
+import FileUpload from "../components/files-upload-component";
 import ArticleCarouselItem from "../components/ArticleCarouselItem";
 import articlesInfo from "../articles.json";
 import Modal from "../components/Modal";
-import Header from "../components/Header";
+import Header from "../components/Header.component";
 
 class ArticlePage extends React.Component {
   constructor(props) {

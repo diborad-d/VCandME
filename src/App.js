@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bulma/css/bulma.css';
 import { useAuth0 } from './contexts/auth0-context';
-import Header from './components/Header';
+import Header from './components/Header.component';
 
 
 import {

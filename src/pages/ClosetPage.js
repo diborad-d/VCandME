@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { AppBar, Toolbar, Typography, Button, IconButton, Grid, Paper, Tab, Tabs } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import Header from "../components/Header";
+import Header from "../components/Header.component";
 import ArticleCarouselItem from "../components/ArticleCarouselItem";
 import ClosetSwipeableTextMobileStepper from "../components/ClosetCarousel";
 import closetItemCard from "../components/closetItemCard";
