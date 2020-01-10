@@ -1,57 +1,62 @@
-// import React from 'react';
-
-
-// function Header(props) {
-//   return (
-//       <h1>{props.title}</h1>
-
-//   )
-// }
-
-// export default Header;
-
-import React from 'react';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
 import { useAuth0 } from '../contexts/auth0-context';
-import './Header.css'
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1
+  },
+  menuButton: {
+    marginRight: theme.spacing(2)
+  },
+  title: {
+    flexGrow: 1
+  }
+}));
 
 export default function Header() {
   const { isLoading, user, loginWithRedirect, logout } = useAuth0();
 
+  const classes = useStyles();
   return (
-    <header>
-      <nav className="navbar is-dark">
-        <div className="container">
-          <div className="navbar-menu is-active">
-            {/* logo */}
-            <div className="navbar-brand">
-              <button className="navbar-item">Digital Closet</button>
-            </div>
-
-            {/* menu items */}
-            <div className="navbar-end">
-              {/* if there is no user. show the login button */}
+    <div className={classes.root}>
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h4" className={classes.title}>
+          Virtual Closet
+        </Typography>
+        {/* <Button color="inherit">Login</Button> */}
+        <div className="navbar-end">
+              {/* if there is no user. show the login Button */}
               {!isLoading && !user && (
-                <button onClick={loginWithRedirect} className="navbar-item">
+                <Button onClick={loginWithRedirect} className="navbar-item">
                   Login
-                </button>
+                </Button>
               )}
-
-              {/* if there is a user. show user name and logout button */}
+              {/* if there is a user. show user name and logout Button */}
               {!isLoading && user && (
                 <>
-                  <button className="navbar-item">{user.name}</button>
-                  <button
+                  <Button className="navbar-item">{user.name}</Button>
+                  <Button
                     onClick={() => logout({ returnTo: window.location.origin })}
                     className="navbar-item"
                   >
                     Logout
-                  </button>
+                  </Button>
                 </>
               )}
             </div>
-          </div>
-        </div>
-      </nav>
-    </header>
+      </Toolbar>
+    </AppBar>
+  </div>
   );
 }
