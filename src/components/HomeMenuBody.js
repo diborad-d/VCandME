@@ -1,5 +1,7 @@
 import React from 'react';
 import HomeBtn from './HomeBtn';
+import Card from './HomeMenuCard';
+import { Paper } from '@material-ui/core';
 
 function HomeMenuBody(props) {
   const styles = {
@@ -23,28 +25,31 @@ function HomeMenuBody(props) {
     }
   }
 
-  // const { para, img, title, link } = props
-  const 
-    para=props.para,
-    img=props.img,
-    title=props.title,
-    link=props.link
-
+  const { img, title, link } = props
+ 
    
 
   return (
-    <div style={styles.bodyStyle}>
+    <Paper elevation={24}>
+      <div style={styles.bodyStyle}>
       <div style={styles.picBtn}> 
-        <img src={img} alt={title} style={styles.Image} />
+        <Card img={img} alt={title} />
+
+        {/* <img src={img} alt={title} style={styles.Image} /> */}
         <HomeBtn title={title} className="btn" link={link} />
       </div>
       
-      <span><p>{para}.</p></span>
+      
 
     </div>
+
+    </Paper>
+    
     
     // use mixins for flex here
   ) 
 }
 
 export default HomeMenuBody
+
+

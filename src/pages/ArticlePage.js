@@ -1,11 +1,18 @@
 import React from "react";
 import HomeBtn from "../components/HomeBtn";
-import ImageInput from "../components/ImageInput";
+import FileUpload from "../components/files-upload-component";
 import ArticleCarouselItem from "../components/ArticleCarouselItem";
 import articlesInfo from "../articles.json";
 import Modal from "../components/Modal";
+<<<<<<< HEAD
 import Header from "../components/Header";
 import FileUpload from "../components/files-upload-component";
+=======
+import Header from "../components/Header.component";
+
+
+
+>>>>>>> b2f2bc10e9d3753e31fb53cfe049e9291b01db1a
 
 class ArticlePage extends React.Component {
   constructor(props) {
@@ -24,6 +31,7 @@ class ArticlePage extends React.Component {
   };
 
   render() {
+
     const styles = {
       // config these style using sass
       carouselStyle: {

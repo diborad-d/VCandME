@@ -2,9 +2,9 @@ import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { AppBar, Toolbar, Typography, Button, IconButton, Grid, Paper, Tab, Tabs } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import Header from "../components/Header";
+
 import ArticleCarouselItem from "../components/ArticleCarouselItem";
-import ClosetSwipeableTextMobileStepper from "../components/ClosetCarousel";
+import TextMobileStepper from "../components/ClosetCarousel";
 import closetItemCard from "../components/closetItemCard";
 import Divider from "@material-ui/core/Divider";
 
@@ -39,7 +39,6 @@ export default function ClosetPage() {
 
   return (
     <div>
-      <Header />
       <Grid container >
         <Grid leftGrid sm spacing={3} style={style.paper}>
           <Paper square>
@@ -53,12 +52,12 @@ export default function ClosetPage() {
         </Grid>
         <Grid topRightGrid sm style={style.paper}>
           <Tabs>
-            <ClosetSwipeableTextMobileStepper />
+            <TextMobileStepper />
           </Tabs>
           <Divider/>
           <Grid bottomRightGrid sm>
             <Tabs>
-              <ClosetSwipeableTextMobileStepper />
+              <TextMobileStepper />
             </Tabs>
           </Grid>
         </Grid>

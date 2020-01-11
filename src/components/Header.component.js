@@ -8,6 +8,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useAuth0 } from '../contexts/auth0-context';
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -32,7 +33,7 @@ export default function Header() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h4" className={classes.title}>
-          Virtual Closet
+          Digitial Closet
         </Typography>
         {/* <Button color="inherit">Login</Button> */}
         <div className="navbar-end">
