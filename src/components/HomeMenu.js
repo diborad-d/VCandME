@@ -10,9 +10,6 @@ import HomeMenuBody from './HomeMenuBody';
 import homeMenuInfo from '../homeMenuBody.json'
 
 
-<<<<<<< HEAD
-function HomeMenu() {
-=======
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
@@ -43,7 +40,6 @@ export default function ControlledExpansionPanels() {
   const handleChange = panel => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
->>>>>>> b2f2bc10e9d3753e31fb53cfe049e9291b01db1a
 
   return (
     <div className={classes.root}>
