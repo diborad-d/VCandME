@@ -4,7 +4,10 @@ import FileUpload from "../components/files-upload-component";
 import ArticleCarouselItem from "../components/ArticleCarouselItem";
 import articlesInfo from "../articles.json";
 import Modal from "../components/Modal";
-import Header from "../components/Header.component";
+import Header from "../components/Header";
+import FileUpload from "../components/files-upload-component";
+
+
 
 class ArticlePage extends React.Component {
   constructor(props) {
