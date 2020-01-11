@@ -73,7 +73,7 @@ router.post('/save-garment', (req, res, next) => {
         brand: req.body.brand,
         color: req.body.color,
         picture: req.body.picture,
-        type: req.body.picture,
+        type: req.body.type,
         dateWorn: req.body.dateWorn,
         peopleSeen: req.body.peopleSeen,
         topOrBottom: req.body.topOrBottom,

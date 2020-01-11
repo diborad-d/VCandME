@@ -9,7 +9,9 @@ import{
 import HomeMenuBody from './HomeMenuBody';
 import homeMenuInfo from '../homeMenuBody.json'
 
+
 function HomeMenu() {
+
   return (
       <ul className="collapsible">
         <li>
