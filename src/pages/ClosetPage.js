@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { AppBar, Toolbar, Typography, Button, IconButton, Grid, Paper, Tab, Tabs } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import Header from "../components/Header.component";
+
 import ArticleCarouselItem from "../components/ArticleCarouselItem";
 import TextMobileStepper from "../components/ClosetCarousel";
 import closetItemCard from "../components/closetItemCard";
@@ -39,7 +39,6 @@ export default function ClosetPage() {
 
   return (
     <div>
-      <Header />
       <Grid container >
         <Grid leftGrid sm spacing={3} style={style.paper}>
           <Paper square>
