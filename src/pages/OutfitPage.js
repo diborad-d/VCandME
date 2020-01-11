@@ -2,7 +2,7 @@ import React from "react";
 import HomeBtn from "../components/HomeBtn";
 import EventListItem from "../components/EventListItem";
 import { outfit1 } from "../outfits.json";
-import Header from "../components/Header";
+
 
 class ArticlePage extends React.Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class ArticlePage extends React.Component {
   render() {
     return (
       <div>
-        <Header title="Outfit Page" /> 
         <div className="container">
           <div className="row">
             <div className="col s8">
