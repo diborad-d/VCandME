@@ -33,7 +33,7 @@ export default function Header() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h4" className={classes.title}>
-          Virtual Closet
+          Digitial Closet
         </Typography>
         {/* <Button color="inherit">Login</Button> */}
         <div className="navbar-end">
