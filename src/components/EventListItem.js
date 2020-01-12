@@ -1,24 +1,40 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import Divider from '@material-ui/core/Divider';
+import ListItemText from '@material-ui/core/ListItemText';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+  inline: {
+    display: 'inline',
+  },
+}));
 
 function EventListItem(props) {
-  const { name, location, date} = props;
+  const { children } = props;
+  const classes = useStyles();
+  
   return (
-    <a href="#!" className="collection-item">
-      <div className="row">
-        <div className="col s4">
-          {name}
-        </div>
-        <div className="col s4">
-          {location}
-        </div>
-        <div className="col s3">
-          {date}
-        </div>
-        <div className="col s1">
-          <button>X</button> {/**might have to stop proprogation */}
-        </div>
-      </div></a>
+
+<ListItem alignItems="flex-start">
+        
+        <ListItemText
+          primary={children}
+        />
+      </ListItem>
+    
   )
 }
 
 export default EventListItem;
+
+ 
