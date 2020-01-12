@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useAuth0 } from '../contexts/auth0-context';
+import { Link } from "react-router-dom";
 
 
 const useStyles = makeStyles(theme => ({
@@ -32,9 +33,11 @@ export default function Header() {
         <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           <MenuIcon />
         </IconButton>
-        <Typography variant="h4" className={classes.title}>
+        <Link to="/">
+          <Typography variant="h4" className={classes.title}>
           Digitial Closet
         </Typography>
+        </Link>
         {/* <Button color="inherit">Login</Button> */}
         <div className="navbar-end">
               {/* if there is no user. show the login Button */}
