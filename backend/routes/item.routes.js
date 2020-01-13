@@ -4,6 +4,7 @@ let express = require('express'),
     uuidv4 = require('uuid/v4'),
     router = express.Router();
 
+
 const DIR = './public/';
 
 /// CODE NEEDED SPECIFICALLY FOR UPLOADING IMAGES
@@ -64,9 +65,11 @@ router.get("/", (req, res, next) => {
     });
 });
 
-//GARMENT MODEL================================================================
-let Garment = require("../models/Garment");
 
+//GARMENT MODEL================================================================
+//=============================================================================
+let Garment = require("../models/Garment");
+//saves a new garment
 router.post('/save-garment', (req, res, next) => {
     const garment = new Garment({
         _id: new mongoose.Types.ObjectId(),
@@ -76,6 +79,7 @@ router.post('/save-garment', (req, res, next) => {
         type: req.body.type,
         dateWorn: req.body.dateWorn,
         peopleSeen: req.body.peopleSeen,
+        events: req.body.events,
         topOrBottom: req.body.topOrBottom,
         email: req.body.email    
     });
@@ -91,6 +95,34 @@ router.post('/save-garment', (req, res, next) => {
     })
 })
 
+//route to pull tops of user
+router.get("/get-tops/:currentUser", (req, res, next) => {
+    Garment.find({
+        email: req.params.currentUser,
+        topOrBottom: 'top'
+    }).then(data => {
+        res.status(200).json(data);
+    });
+})
+
+//route to pull bottoms of user
+router.get("/get-bottoms/:currentUser", (req, res, next) => {
+    Garment.find({
+        email: req.params.currentUser,
+        topOrBottom: 'bottom'
+    }).then(data => {
+        res.status(200).json(data);
+    });
+})
+
+//route to get grament data
+router.get("/getGarmentData/:id", (req, res, next) => {
+    Garment.find({
+        _id: req.params.id
+    }).then(data => {
+        res.status(200).json(data);
+    });
+})
 
 
 

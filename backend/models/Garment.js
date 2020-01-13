@@ -7,8 +7,9 @@ const garmentSchema = new Schema({
     color: String,
     picture: String,
     type: String,
-    dateWorn: Date,
-    peopleSeen: String,
+    dateWorn: [Date],
+    peopleSeen: [String],
+    events: [String],
     topOrBottom: String,
     email: String,
     dateCreated: {type: Date, default: Date.now }

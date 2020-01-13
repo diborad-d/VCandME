@@ -39,13 +39,17 @@ export default function Header() {
         <div className="navbar-end">
               {/* if there is no user. show the login Button */}
               {!isLoading && !user && (
+                <>
+                <Button className="navbar-item" href="/">Home</Button>
                 <Button onClick={loginWithRedirect} className="navbar-item">
                   Login
                 </Button>
+                </>
               )}
               {/* if there is a user. show user name and logout Button */}
               {!isLoading && user && (
                 <>
+                  <Button className="navbar-item" href="/">Home</Button>
                   <Button className="navbar-item">{user.name}</Button>
                   <Button
                     onClick={() => logout({ returnTo: window.location.origin })}
