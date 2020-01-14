@@ -124,6 +124,23 @@ router.get("/getGarmentData/:id", (req, res, next) => {
     });
 })
 
+router.post("/update-data/:id", (req, res, next) => {
+    Garment.updateOne(
+        { _id: req.params.id },
+        { $push: 
+            {peopleSeen: req.body.peopleSeen,
+            dateWorn: req.body.dateWorn,
+            events: req.body.events }}
+    ).then(data => {
+        res.status(200).json(data);
+    }).catch(err => {
+        console.log(err),
+            res.status(500).json({
+                error: err
+            })
+    })
+})
+
 
 
 module.exports = router;

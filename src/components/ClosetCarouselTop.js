@@ -7,7 +7,9 @@ import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import Tabs from "@material-ui/core/Tabs";
-import Dialog from "./Dialog/Dialog";
+import Dialog from "./Dialog/DialogInput";
+import DialogOutput from "./Dialog/DialogOutput";
+import DialogUpdate from "./Dialog/DialogUpdate";
 import axios from "axios";
 
 let tutorialSteps1 = [
@@ -67,20 +69,20 @@ export default function TextMobileStepper() {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   let maxSteps = tutorialSteps1.length;
+  localStorage.setItem("currentTop", activeStep);
 
-  const [ dateWorn, setDateWorn ] = React.useState();
-
+  
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
+
 
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   };
 
   let currentUser = localStorage.getItem("currentUser");
-  let userTops = [];
-  let garmentData;
+  let userTops = [];   
   
 
   const pullTops = () => {
@@ -107,26 +109,7 @@ export default function TextMobileStepper() {
   }
 
 
-  const getGarmentData = () => {
-    axios.get("http://localhost:4000/api/get-tops/" + currentUser).then(function (res) {
-      userTops = res;
-      let id = userTops.data[activeStep]._id;
-      console.log(id);
-      
-      axios.get("http://localhost:4000/api/getGarmentData/" + id).then(function (result){
-        console.log(result);
-        let peopleSeen = result.data[0].peopleSeen;
-        let dateWorn = result.data[0].dateWorn;
-        let events = result.data[0].events;
-        garmentData = { peopleSeen, dateWorn, events };
-        console.log(garmentData);
-      })
-    }).catch(function (error){
-      console.log(error);
-    })
-    
-  }
-
+// AT THIS POINT STARTED ADDING CODE TO PUSH PROPS
 
   return (
     <div className={classes.root}>
@@ -135,7 +118,8 @@ export default function TextMobileStepper() {
           {/* <Typography className={classes.title}>Your Tops</Typography> */}
           <Dialog></Dialog>
           <button className="btn btn-primary" color="inherit" onClick={pullTops}>Get Your Tops</button>
-          <button className="btn btn-primary" color="inherit" onClick={getGarmentData}>Get Current Top's Info</button>
+          <DialogOutput></DialogOutput>
+          <DialogUpdate></DialogUpdate>
         </Tabs>
       </Paper>
       <img className={classes.img} src={tutorialSteps1[activeStep].imgPath} alt={tutorialSteps1[activeStep].label} />

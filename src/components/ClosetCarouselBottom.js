@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import Tabs from "@material-ui/core/Tabs";
-import Dialog from "./Dialog/Dialog";
+import Dialog from "./Dialog/DialogInput";
 import axios from "axios";
 
 let tutorialSteps1 = [
