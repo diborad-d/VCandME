@@ -10,29 +10,6 @@ import Tabs from "@material-ui/core/Tabs";
 import Dialog from "./Dialog/DialogInput";
 import axios from "axios";
 
-let tutorialSteps1 = [
-  {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
-  },
-  {
-    label: "Bird",
-    imgPath: "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60"
-  },
-  {
-    label: "Bali, Indonesia",
-    imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
-  },
-  {
-    label: "NeONBRAND Digital Marketing, Las Vegas, United States",
-    imgPath: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60"
-  },
-  {
-    label: "Goč, Serbia",
-    imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60"
-  }
-];
-
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 600,
@@ -60,13 +37,14 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function TextBottomStepper() {
-
-
+export default function ClosetCarousel(props) {
+  // props is an object that wraps all propeties that gets passed in to this component.
+  const title = props.title;
+  const carouselItems = props.carouselItems;
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  let maxSteps = tutorialSteps1.length;
+  const maxSteps = carouselItems.length;
 
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
@@ -80,40 +58,38 @@ export default function TextBottomStepper() {
   let userBottoms = [];
   
 
-  const pullBottoms = () => {
-    axios.get("http://localhost:4000/api/get-bottoms/" + currentUser).then(function (res) {
-        userBottoms = res;
-        console.log(userBottoms);
-        tutorialSteps1 = [];
+  // const pullBottoms = () => {
+  //   axios.get("http://localhost:4000/api/get-bottoms/" + currentUser).then(function (res) {
+  //       userBottoms = res;
+  //       console.log(userBottoms);
+  //       tutorialSteps1 = [];
 
-        for( let i=0; i<userBottoms.data.length; i++) {
-          let label = userBottoms.data[i].brand + "_" + userBottoms.data[i].color + "_" + userBottoms.data[i].type;
-          let imgPath = userBottoms.data[i].picture;
-          let oneBottom = {
-            label: label,
-            imgPath: imgPath
-          };
-          tutorialSteps1.push(oneBottom);
-        }
-        console.log(tutorialSteps1);
-        maxSteps = tutorialSteps1.length;
+  //       for( let i=0; i<userBottoms.data.length; i++) {
+  //         let label = userBottoms.data[i].brand + "_" + userBottoms.data[i].color + "_" + userBottoms.data[i].type;
+  //         let imgPath = userBottoms.data[i].picture;
+  //         let oneBottom = {
+  //           label: label,
+  //           imgPath: imgPath
+  //         };
+  //         tutorialSteps1.push(oneBottom);
+  //       }
+  //       console.log(tutorialSteps1);
+  //       maxSteps = tutorialSteps1.length;
         
-      }).catch(function (error) {
-          console.log(error);
-      })    
-  }
+  //     }).catch(function (error) {
+  //         console.log(error);
+  //     })    
+  // }
 
 
   return (
     <div className={classes.root}>
       <Paper square>
         <Tabs>
-          {/* <Typography className={classes.title}>Your Bottoms</Typography> */}
-          <Dialog></Dialog>
-          <button className="btn btn-primary" color="inherit" onClick={pullBottoms}>Get Your Bottoms</button>
+          <Typography className={classes.title}>{title}</Typography>
         </Tabs>
       </Paper>
-      <img className={classes.img} src={tutorialSteps1[activeStep].imgPath} alt={tutorialSteps1[activeStep].label} />
+      <img className={classes.img} src={carouselItems[activeStep].imgPath} alt={carouselItems[activeStep].label} />
       <MobileStepper
         steps={maxSteps}
         position="static"
