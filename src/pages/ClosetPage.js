@@ -4,7 +4,8 @@ import { AppBar, Toolbar, Typography, Button, IconButton, Grid, Paper, Tab, Tabs
 import MenuIcon from "@material-ui/icons/Menu";
 
 import ArticleCarouselItem from "../components/ArticleCarouselItem";
-import TextMobileStepper from "../components/ClosetCarousel";
+import TextMobileStepper from "../components/ClosetCarouselTop";
+import TextBottomStepper from "../components/ClosetCarouselBottom";
 import closetItemCard from "../components/closetItemCard";
 import Divider from "@material-ui/core/Divider";
 
@@ -57,7 +58,7 @@ export default function ClosetPage() {
           <Divider/>
           <Grid bottomRightGrid sm>
             <Tabs>
-              <TextMobileStepper />
+              <TextBottomStepper />
             </Tabs>
           </Grid>
         </Grid>
