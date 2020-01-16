@@ -15,6 +15,7 @@
     "config": "^3.2.4",
     "dotenv": "^8.2.0",
     "install": "^0.13.0",
+    "mdbreact": "^4.24.0",
     "mongoose": "^5.8.3",
     "npm": "^6.13.4",
     "pug": "^2.0.4",
@@ -45,5 +46,18 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "## MVP    - [ ] Utility: Allows users to inventory wardrobe and save oufits   - [ ] React.js   - [ ] MongoDB with Mongoose ORM   - [ ] GET routes   - [ ] POST routes   - [ ] Deploy to Heroku   - [ ] Two Technologies not talkied about in class   - [ ] Authentication Users   - [ ] Polished Frontend   - [ ] MVC Paradigm   - [ ] Good quaility coding standards   - [ ] Protect sensitive API keys",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diborad-d/VCandME.git"
+  },
+  "author": "Dibora Dagne Jeremy Jones Santiago Turbe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diborad-d/VCandME/issues"
+  },
+  "homepage": "https://github.com/diborad-d/VCandME#readme"
 }

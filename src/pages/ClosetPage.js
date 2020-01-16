@@ -7,12 +7,7 @@ import ArticleCarouselItem from "../components/ArticleCarouselItem";
 import ClosetCarousel from "../components/ClosetCarousel";
 import closetItemCard from "../components/closetItemCard";
 import Divider from "@material-ui/core/Divider";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import Icon from "@material-ui/core/Icon";
-import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
-
-// import Icon from "../components/Icon/Index";
+import TranferButton from "../components/TranferButton";
 
 const tops = [
   {
@@ -78,8 +73,20 @@ export default function ClosetPage() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const leftIcon = <ChevronLeftIcon />;
-  const rightIcon = <ChevronRightIcon />;
+  const topBtnStyles = {
+    display: "flex",
+    flexDirection: "row",
+    height: "50px",
+    width: "50px",
+    marginTop: "20%"
+  };
+  const bottomBtnStyles = {
+    display: "flex",
+    flexDirection: "row",
+    height: "50px",
+    width: "50px",
+    marginTop: "100%"
+  };
 
   return (
     <div>
@@ -94,11 +101,14 @@ export default function ClosetPage() {
           </Paper>
           <closetItemCard />
         </Grid>
+        <Grid container style={topBtnStyles}>
+          <Grid item>
+            <TranferButton />
+          </Grid>
 
-        <Grid item style={{ display: "flex", flexDirection: "row" }}>
-          <MDBIcon icon="angle-right" />
-
-          <MDBIcon icon="angle-left" />
+          <Grid item style={bottomBtnStyles}>
+            <TranferButton />
+          </Grid>
         </Grid>
         <Grid item topRightGrid sm spacing={3} style={style.paper}>
           <Tabs>
