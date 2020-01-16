@@ -52,12 +52,12 @@ export default function ClosetPage() {
         </Grid>
         <Grid topRightGrid sm style={style.paper}>
           <Tabs>
-            <TextMobileStepper />
+          <ClosetSwipeableTextMobileStepper props ={[...tops]} />
           </Tabs>
           <Divider/>
           <Grid bottomRightGrid sm>
             <Tabs>
-              <TextMobileStepper />
+            <ClosetSwipeableTextMobileStepper props ={[...tops]} />
             </Tabs>
           </Grid>
         </Grid>
