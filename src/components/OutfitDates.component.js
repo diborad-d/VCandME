@@ -7,6 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import EventListItem from './EventListItem'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -19,22 +20,25 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function EventListItem(props) {
-  const { children } = props;
-  const classes = useStyles();
+export default function AlignItemsList(props) {
+  const { dates } = props;
   
+  const classes = useStyles();
+
   return (
+    <List className={classes.root}>
 
-<ListItem alignItems="flex-start">
+      {dates.map((date,i) => {
+        return(
+          <div key={i}>
+            <EventListItem>{date}</EventListItem>
+            <Divider variant="fullWidth" component="li" />
+
+          </div>
         
-        <ListItemText
-          primary={children}
-        />
-      </ListItem>
-    
-  )
+        )
+      })}
+      
+    </List>
+  );
 }
-
-export default EventListItem;
-
- 

@@ -1,64 +1,56 @@
-{
-  "outfit1": {
+[
+  {
     "name": "Outfit 1",
     "id": "1",
-    "top": "top_id",
-    "bottom": "bottom_id",
-    "photos": {
-      "0": "./images/articles/article1.jpg", 
-      "1": "./images/articles/article2.jpg", 
-      "2": "./images/articles/article3.jpg"},
-    "events": {
-      "0": {
+    "top_id": "top_id",
+    "top_photo": "./images/articles/article1.jpg",
+    "bottom_id": "bottom_id",
+    "bottom_photo": "./images/articles/article4.jpg",
+    "attendees": ["Mr. Jones", "Mrs. Jones", "Monica", "Stacy", "David"],
+    "events": ["Christmas Dinner with inlaws", "New Years Office party"],
+    "dates": ["December 25, 2019", "Januray 4, 2020"],
+    "photos": ["./images/articles/article1.jpg", "./images/articles/article2.jpg", "./images/articles/article3.jpg"],
+    "eventObjs": [
+      {
         "name": "Party 1",
         "location": "There",
-        "date": "Now",
-        "attendees":{
-          "0": "Jim",
-          "1": "Dewight"
-        }
+        "date": "Now"
       },
-      "1": {
+      {
         "name": "Party 2",
         "location": "Here",
-        "date": "Then",
-        "attendees":{
-          "0": "Andy",
-          "1": "Kevin"
-        }
+        "date": "Then"
       }
-    }
+    ]
   },
-  "outfit2": {
+{
     "name": "Outfit 2",
     "id": "2",
-    "top": "top_id",
-    "bottom": "bottom_id",
-    "photos": {
-      "0": "./images/articles/article1.jpg", 
-      "1": "./images/articles/article2.jpg", 
-      "2": "./images/articles/article3.jpg"},
-    "events": {
-      "0": {
-        "name": "party 3",
-        "location": "Over There",
-        "date": "Right Now",
-        "attendees":{
-          "0": "Micheal",
-          "1": "Stanley"
-        }
+    "top_id": "top_id",
+    "top_photo": "./images/articles/article2.jpg",
+    "bottom_id": "bottom_id",
+    "bottom_photo": "./images/articles/article7.jpg",
+    "attendees": [ "Monica", "Matt", "David"],
+    "events": ["Matts art gallery"],
+    "dates": ["November, 2019"],
+    "photos": ["./images/articles/article1.jpg", "./images/articles/article2.jpg", "./images/articles/article3.jpg"],
+    "eventObjs": [
+      {
+        "name": "Party 1",
+        "location": "There",
+        "date": "Now"
       },
-      "1": {
-        "name": "party 2",
-        "location": "Over Here",
-        "date": " Right Then",
-        "attendees":{
-          "0": "Pam",
-          "1": "Angela"
-        }
+      {
+        "name": "Party 2",
+        "location": "Here",
+        "date": "Then"
       }
-      
-    }
-    
+    ]
   }
-}
+  
+  
+       
+      
+    
+ 
+]
