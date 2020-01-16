@@ -4,10 +4,52 @@ import { AppBar, Toolbar, Typography, Button, IconButton, Grid, Paper, Tab, Tabs
 import MenuIcon from "@material-ui/icons/Menu";
 
 import ArticleCarouselItem from "../components/ArticleCarouselItem";
-import TextMobileStepper from "../components/ClosetCarousel";
+import ClosetCarousel from "../components/ClosetCarousel";
 import closetItemCard from "../components/closetItemCard";
 import Divider from "@material-ui/core/Divider";
+import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
+import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import Icon from "@material-ui/core/Icon";
+import { MDBRow, MDBCol, MDBIcon } from "mdbreact";
 
+// import Icon from "../components/Icon/Index";
+
+const tops = [
+  {
+    label: "San Francisco – Oakland Bay Bridge, United States",
+    imgPath: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
+  },
+  {
+    label: "Bird",
+    imgPath: "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60"
+  },
+  {
+    label: "Bali, Indonesia",
+    imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
+  },
+  {
+    label: "NeONBRAND Digital Marketing, Las Vegas, United States",
+    imgPath: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60"
+  },
+  {
+    label: "Goč, Serbia",
+    imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60"
+  }
+];
+const bottoms = [
+  {
+    label: "Bali, Indonesia",
+    imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
+  },
+  {
+    label: "NeONBRAND Digital Marketing, Las Vegas, United States",
+    imgPath: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60"
+  },
+  {
+    label: "Goč, Serbia",
+    imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60"
+  }
+];
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -36,11 +78,13 @@ export default function ClosetPage() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const leftIcon = <ChevronLeftIcon />;
+  const rightIcon = <ChevronRightIcon />;
 
   return (
     <div>
-      <Grid container >
-        <Grid leftGrid sm spacing={3} style={style.paper}>
+      <Grid container>
+        <Grid item leftGrid sm spacing={3} style={style.paper}>
           <Paper square>
             <Tabs value={value} indicatorColor="primary" textColor="primary" onChange={handleChange} aria-label="disabled tabs example">
               <Tab label="Article Deatials" />
@@ -48,16 +92,22 @@ export default function ClosetPage() {
               <Tab label="Goes With" />
             </Tabs>
           </Paper>
-          <closetItemCard/>
+          <closetItemCard />
         </Grid>
-        <Grid topRightGrid sm style={style.paper}>
+
+        <Grid item style={{ display: "flex", flexDirection: "row" }}>
+          <MDBIcon icon="angle-right" />
+
+          <MDBIcon icon="angle-left" />
+        </Grid>
+        <Grid item topRightGrid sm spacing={3} style={style.paper}>
           <Tabs>
-          <ClosetSwipeableTextMobileStepper props ={[...tops]} />
+            <ClosetCarousel carouselItems={tops} title={"Your Tops"} />
           </Tabs>
-          <Divider/>
-          <Grid bottomRightGrid sm>
+          <Divider />
+          <Grid bottomRightGrid sm spacing={3}>
             <Tabs>
-            <ClosetSwipeableTextMobileStepper props ={[...tops]} />
+              <ClosetCarousel carouselItems={bottoms} title={"Your Bottoms"} />
             </Tabs>
           </Grid>
         </Grid>
