@@ -8,42 +8,35 @@ import ClosetCarousel from "../components/ClosetCarousel";
 import closetItemCard from "../components/closetItemCard";
 import Divider from "@material-ui/core/Divider";
 
-const tops = [
-  {
-    label: "San Francisco – Oakland Bay Bridge, United States",
-    imgPath: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
-  },
-  {
-    label: "Bird",
-    imgPath: "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60"
-  },
-  {
-    label: "Bali, Indonesia",
-    imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
-  },
-  {
-    label: "NeONBRAND Digital Marketing, Las Vegas, United States",
-    imgPath: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60"
-  },
-  {
-    label: "Goč, Serbia",
-    imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60"
-  }
-];
-const bottoms = [
-  {
-    label: "Bali, Indonesia",
-    imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
-  },
-  {
-    label: "NeONBRAND Digital Marketing, Las Vegas, United States",
-    imgPath: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60"
-  },
-  {
-    label: "Goč, Serbia",
-    imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60"
-  }
-];
+// const tops = [
+//   {
+//     label: "Bali, Indonesia",
+//     imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
+//   },
+//   {
+//     label: "NeONBRAND Digital Marketing, Las Vegas, United States",
+//     imgPath: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60"
+//   },
+//   {
+//     label: "Goč, Serbia",
+//     imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60"
+//   }
+// ];
+
+// const bottoms = [
+//   {
+//     label: "Bali, Indonesia",
+//     imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
+//   },
+//   {
+//     label: "NeONBRAND Digital Marketing, Las Vegas, United States",
+//     imgPath: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60"
+//   },
+//   {
+//     label: "Goč, Serbia",
+//     imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60"
+//   }
+// ];
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -55,6 +48,55 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   }
 }));
+// An array of all the garments in the database. Mock this data
+const garments = [
+  {
+    _id: 0,
+    brand: "American Eagle",
+    picture: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
+    dateWorn: Date(),
+    topOrBottom: "top"
+  },
+  {
+    _id: 1,
+    brand: "American Eagle",
+    picture: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80",
+    dateWorn: Date(),
+    topOrBottom: "top"
+  },
+  {
+    _id: 2,
+    brand: "American Eagle",
+    picture: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
+    dateWorn: Date(),
+    topOrBottom: "bottom"
+  },
+  {
+    _id: 3,
+    brand: "American Eagle",
+    picture: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80",
+    dateWorn: Date(),
+    topOrBottom: "bottom"
+  }
+];
+
+function getTops() {
+  // return db.garments.find({topOrBottom: "top"});
+  return garments.filter(garment => garment.topOrBottom === "top");
+}
+
+// get the bottoms from that array
+function getBottoms() {
+  return garments.filter(garment => garment.topOrBottom === "bottom");
+}
+
+const getGarments = () => {
+  return garments; // later will be return db.garments.find();
+};
+
+const getGarment = id => {
+  return garments.filter(x => x._id == id); // later will be return db.garments.find(id);
+};
 
 export default function ClosetPage() {
   const classes = useStyles();
@@ -88,12 +130,12 @@ export default function ClosetPage() {
         </Grid>
         <Grid topRightGrid sm style={style.paper}>
           <Tabs>
-            <ClosetCarousel carouselItems={tops} title={"Your Tops"} />
+            <ClosetCarousel carouselItems={getTops()} title={"Your Tops"} />
           </Tabs>
           <Divider/>
           <Grid bottomRightGrid sm>
             <Tabs>
-              <ClosetCarousel carouselItems={bottoms} title={"Your Bottoms"} />
+              <ClosetCarousel carouselItems={getBottoms()} title={"Your Bottoms"} />
             </Tabs>
           </Grid>
         </Grid>

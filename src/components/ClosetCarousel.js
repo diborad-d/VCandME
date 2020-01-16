@@ -89,7 +89,7 @@ export default function ClosetCarousel(props) {
           <Typography className={classes.title}>{title}</Typography>
         </Tabs>
       </Paper>
-      <img className={classes.img} src={carouselItems[activeStep].imgPath} alt={carouselItems[activeStep].label} />
+      <img className={classes.img} src={carouselItems[activeStep].picture} alt={carouselItems[activeStep].brand} />
       <MobileStepper
         steps={maxSteps}
         position="static"
