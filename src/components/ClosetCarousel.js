@@ -10,6 +10,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Dialog from "./Dialog/DialogInput";
 import axios from "axios";
 
+// const axios = require('axios');
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 600,
@@ -54,8 +55,8 @@ export default function ClosetCarousel(props) {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   };
 
-  let currentUser = localStorage.getItem("currentUser");
-  let userBottoms = [];
+  // let currentUser = localStorage.getItem("currentUser");
+  // let userBottoms = [];
   
 
   // const pullBottoms = () => {

@@ -107,6 +107,7 @@ router.get("/get-tops/:currentUser", (req, res, next) => {
 
 //route to pull bottoms of user
 router.get("/get-bottoms/:currentUser", (req, res, next) => {
+    console.log(req);
     Garment.find({
         email: req.params.currentUser,
         topOrBottom: 'bottom'

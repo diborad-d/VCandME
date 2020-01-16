@@ -7,6 +7,7 @@ import ArticleCarouselItem from "../components/ArticleCarouselItem";
 import ClosetCarousel from "../components/ClosetCarousel";
 import closetItemCard from "../components/closetItemCard";
 import Divider from "@material-ui/core/Divider";
+import axios from "axios";
 
 // const tops = [
 //   {
@@ -86,9 +87,24 @@ function getTops() {
 }
 
 // get the bottoms from that array
+// function getBottoms() {
+//   return garments.filter(garment => garment.topOrBottom === "bottom");
+// }
+
+let currentUser = localStorage.getItem("currentUser");
+let userBottoms = [];
+
 function getBottoms() {
-  return garments.filter(garment => garment.topOrBottom === "bottom");
-}
+  axios
+    .get("http://localhost:4000/api/get-bottoms/" + currentUser)
+    .then(function(res) {
+      return res;
+    })
+    .catch(function(error) {
+      console.log(error);
+      return [];
+    });
+};
 
 const getGarments = () => {
   return garments; // later will be return db.garments.find();
@@ -117,7 +133,7 @@ export default function ClosetPage() {
 
   return (
     <div>
-      <Grid container >
+      <Grid container>
         <Grid leftGrid sm spacing={3} style={style.paper}>
           <Paper square>
             <Tabs value={value} indicatorColor="primary" textColor="primary" onChange={handleChange} aria-label="disabled tabs example">
@@ -126,13 +142,13 @@ export default function ClosetPage() {
               <Tab label="Goes With" />
             </Tabs>
           </Paper>
-          <closetItemCard/>
+          <closetItemCard />
         </Grid>
         <Grid topRightGrid sm style={style.paper}>
           <Tabs>
             <ClosetCarousel carouselItems={getTops()} title={"Your Tops"} />
           </Tabs>
-          <Divider/>
+          <Divider />
           <Grid bottomRightGrid sm>
             <Tabs>
               <ClosetCarousel carouselItems={getBottoms()} title={"Your Bottoms"} />
