@@ -3,7 +3,6 @@ import axios from 'axios';
 import {Input, FormBtn, DropDown } from "../components/Form";
 import { Col, Row, Container } from "../components/Grid";
 import SimpleSelect from "../components/TopOrBottomSelect";
-<<<<<<< HEAD:client/src/components/files-upload-component.js
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -15,8 +14,6 @@ import ColorIcon from '@material-ui/icons/ColorLensRounded';
 import CalendarIcon from '@material-ui/icons/CalendarToday';
 import ShirtIcon from '@material-ui/icons/ShoppingBasket';
 import EventIcon from '@material-ui/icons/PartyMode';
-=======
->>>>>>> 5014dfab431cb061fddbd52f3f28fd695791a620:src/components/files-upload-component.js
 
 export default class FilesUploadComponent extends Component {
 
@@ -164,11 +161,7 @@ export default class FilesUploadComponent extends Component {
                         />
                         
                         <div className="form-group">
-<<<<<<< HEAD:client/src/components/files-upload-component.js
                             <button className="btn btn-primary purple" color="inherit"type="submit">Upload</button>
-=======
-                            <button className="btn btn-primary" color="inherit"type="submit">Upload</button>
->>>>>>> 5014dfab431cb061fddbd52f3f28fd695791a620:src/components/files-upload-component.js
                         </div>
                     </form>
                 </div>

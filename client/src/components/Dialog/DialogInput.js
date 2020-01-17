@@ -1,17 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Avatar from '@material-ui/core/Avatar';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Dialog from '@material-ui/core/Dialog';
-import PersonIcon from '@material-ui/icons/Person';
-import AddIcon from '@material-ui/icons/Add';
-import Typography from '@material-ui/core/Typography';
 import { blue } from '@material-ui/core/colors';
 import FileUpload from "../files-upload-component";
 
@@ -87,7 +80,7 @@ export default function SimpleDialogDemo() {
     <div>
       {/* <Typography variant="subtitle1">Selected: {selectedValue}</Typography>
       <br /> */}
-      <button  className="btn btn-primary" color="inherit" onClick={handleClickOpen}>
+      <button  className="btn btn-primary purple" color="inherit" onClick={handleClickOpen}>
         Add New Item
       </button>
       <SimpleDialog selectedValue={selectedValue} open={open} onClose={handleClose} />
