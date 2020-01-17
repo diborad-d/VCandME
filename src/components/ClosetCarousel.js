@@ -46,6 +46,7 @@ export default function ClosetCarousel(props) {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = carouselItems.length;
+  console.log(carouselItems);
 
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
@@ -57,7 +58,6 @@ export default function ClosetCarousel(props) {
 
   // let currentUser = localStorage.getItem("currentUser");
   // let userBottoms = [];
-  
 
   // const pullBottoms = () => {
   //   axios.get("http://localhost:4000/api/get-bottoms/" + currentUser).then(function (res) {
@@ -76,12 +76,11 @@ export default function ClosetCarousel(props) {
   //       }
   //       console.log(tutorialSteps1);
   //       maxSteps = tutorialSteps1.length;
-        
+
   //     }).catch(function (error) {
   //         console.log(error);
-  //     })    
+  //     })
   // }
-
 
   return (
     <div className={classes.root}>
@@ -111,5 +110,4 @@ export default function ClosetCarousel(props) {
       />
     </div>
   );
-  
 }
