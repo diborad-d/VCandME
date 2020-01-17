@@ -1,44 +1,54 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import MobileStepper from "@material-ui/core/MobileStepper";
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import Tabs from "@material-ui/core/Tabs";
 import Dialog from "./Dialog/DialogInput";
 import DialogOutput from "./Dialog/DialogOutput";
-import DialogAddDate from "./Dialog/DialogAddDate";
-import DialogAddEvent from "./Dialog/DialogAddEvent";
-import DialogAddPeople from "./Dialog/DialogAddPeople";
+import DialogUpdate from "./Dialog/DialogUpdate";
 import axios from "axios";
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import {Input} from "../components/Form";
-import "./Brands.css";
-
 
 let tutorialSteps1 = [
   {
-    label: "Digital Closet Logo",
-    imgPath: "https://www.graphicsprings.com/filestorage/stencils/7a0dcc38c57d7746e456c1c6af88b735.png?width=500&height=500"
+    label: "San Francisco – Oakland Bay Bridge, United States",
+    imgPath: "https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60"
+  },
+  {
+    label: "Bird",
+    imgPath: "https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60"
+  },
+  {
+    label: "Bali, Indonesia",
+    imgPath: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80"
+  },
+  {
+    label: "NeONBRAND Digital Marketing, Las Vegas, United States",
+    imgPath: "https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=400&h=250&q=60"
+  },
+  {
+    label: "Goč, Serbia",
+    imgPath: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60"
   }
 ];
 
 const useStyles = makeStyles(theme => ({
   root: {
-    maxWidth: 380,
-    flexGrow: 1,
-    alignContent: "center"
+    maxWidth: 600,
+    flexGrow: 1
   },
   header: {
     display: "flex",
     alignItems: "center",
-    height: 40,
+    height: 50,
     paddingLeft: theme.spacing(4),
     backgroundColor: theme.palette.background.default
   },
   img: {
+    overflow: "hidden",
     display: "block",
     width: "100%"
   },
@@ -47,16 +57,13 @@ const useStyles = makeStyles(theme => ({
     alignItems: "center",
     alignContent: "center",
     height: 50,
-    paddingLeft: theme.spacing(1),
+    paddingLeft: theme.spacing(4),
     backgroundColor: theme.palette.background.default
-  },
-  colorInput: {
-    margin:  theme.spacing(1),
-    width: 300,
   }
 }));
 
 export default function TextMobileStepper() {
+
 
   const classes = useStyles();
   const theme = useTheme();
@@ -64,8 +71,7 @@ export default function TextMobileStepper() {
   let maxSteps = tutorialSteps1.length;
   localStorage.setItem("currentTop", activeStep);
 
-  const [colorSearch, setColorSearch] = useState("Color");
-
+  
   const handleNext = () => {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
   };
@@ -75,113 +81,48 @@ export default function TextMobileStepper() {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   };
 
-  const [checked, setChecked] = React.useState(true);
-
-  const handleChange = event => {
-    setChecked(event.target.checked);
-  };
-
   let currentUser = localStorage.getItem("currentUser");
   let userTops = [];   
   
-  localStorage.setItem("colorFilter", checked)
-  localStorage.setItem("colorVar", colorSearch.toLowerCase())
 
   const pullTops = () => {
-    let colorVar = colorSearch.toLowerCase();
-    if(checked == false ){
-      axios.get("/api/get-tops/" + currentUser).then(function (res) {
-          userTops = res;
-          console.log(userTops);
-          tutorialSteps1 = [];
+    axios.get("http://localhost:4000/api/get-tops/" + currentUser).then(function (res) {
+        userTops = res;
+        console.log(userTops);
+        tutorialSteps1 = [];
 
-          for( let i=0; i<userTops.data.length; i++) {
-            let label = userTops.data[i].brand + "_" + userTops.data[i].color + "_" + userTops.data[i].type;
-            let imgPath = userTops.data[i].picture;
-            let oneTop = {
-              label: label,
-              imgPath: imgPath
-            };
-            tutorialSteps1.push(oneTop);
-          }
-          console.log(tutorialSteps1);
-          maxSteps = tutorialSteps1.length;
-      
-          setActiveStep(1);
-          setActiveStep(0);
-          
-        }).catch(function (error) {
-            console.log(error);
-        })   
-    } else if (colorSearch == "Color"){
-      alert("Please enter a color, or uncheck the color filter")
-    } else {
-
-      axios.get("/api/get-tops/" + currentUser + "/" + colorVar).then(function (res) {
-          userTops = res;
-          console.log(userTops);
-          tutorialSteps1 = [];
-
-          for( let i=0; i<userTops.data.length; i++) {
-            let label = userTops.data[i].brand + "_" + userTops.data[i].color + "_" + userTops.data[i].type;
-            let imgPath = userTops.data[i].picture;
-            let oneTop = {
-              label: label,
-              imgPath: imgPath
-            };
-            tutorialSteps1.push(oneTop);
-          }
-          console.log(tutorialSteps1);
-          maxSteps = tutorialSteps1.length;
-      
-          setActiveStep(1);
-          setActiveStep(0);
-          
-        }).catch(function (error) {
-            console.log(error);
-        })   
-
-
-    }
+        for( let i=0; i<userTops.data.length; i++) {
+          let label = userTops.data[i].brand + "_" + userTops.data[i].color + "_" + userTops.data[i].type;
+          let imgPath = userTops.data[i].picture;
+          let oneTop = {
+            label: label,
+            imgPath: imgPath
+          };
+          tutorialSteps1.push(oneTop);
+        }
+        console.log(tutorialSteps1);
+        maxSteps = tutorialSteps1.length;
         
+      }).catch(function (error) {
+          console.log(error);
+      })    
   }
-
-  const handleShopping = () => {
-    // setAnchorEl(null);
-    window.location.href="/outfitPage";
-  };
-  
 
 
 // AT THIS POINT STARTED ADDING CODE TO PUSH PROPS
 
   return (
     <div className={classes.root}>
-        <FormGroup row>
-          <FormControlLabel
-            control={
-              <Checkbox checked={checked} onChange={handleChange} value="primary" color="purple" />
-            }
-            label="Filter by Color (Enter Color Below)"
-          />
-        </FormGroup>
-        <Input 
-            name="colorSearch"
-            value={colorSearch}
-            onChange = {e => setColorSearch(e.target.value)}
-            />
+      <Paper square>
         <Tabs>
           {/* <Typography className={classes.title}>Your Tops</Typography> */}
           <Dialog></Dialog>
-          <button className="btn btn-primary purple" color="inherit" onClick={pullTops}>Pull Your Tops</button>
+          <button className="btn btn-primary" color="inherit" onClick={pullTops}>Get Your Tops</button>
           <DialogOutput></DialogOutput>
+          <DialogUpdate></DialogUpdate>
         </Tabs>
+      </Paper>
       <img className={classes.img} src={tutorialSteps1[activeStep].imgPath} alt={tutorialSteps1[activeStep].label} />
-        <Tabs>
-          <DialogAddDate></DialogAddDate>
-          <DialogAddEvent></DialogAddEvent>
-          <DialogAddPeople></DialogAddPeople>
-        </Tabs>
       <MobileStepper
         steps={maxSteps}
         position="static"
@@ -200,7 +141,6 @@ export default function TextMobileStepper() {
           </Button>
         }
       />
-      <button className="btn btn-primary purple" onClick={handleShopping}>Let's Go Shopping!</button>
     </div>
   );
   

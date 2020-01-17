@@ -51,6 +51,15 @@ export default function ClosetPage() {
           <Tabs>
             <TextMobileStepper />
           </Tabs>
+<<<<<<< HEAD:client/src/pages/ClosetPage.js
+=======
+          <Divider/>
+          <Grid bottomRightGrid sm>
+            <Tabs>
+              <TextBottomStepper />
+            </Tabs>
+          </Grid>
+>>>>>>> 5014dfab431cb061fddbd52f3f28fd695791a620:src/pages/ClosetPage.js
         </Grid>
       </Grid>
     </div>

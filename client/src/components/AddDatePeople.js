@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Input } from "../components/Form";
-import { Container } from "../components/Grid";
+import {Input, FormBtn, DropDown } from "../components/Form";
+import { Col, Row, Container } from "../components/Grid";
 
 
 export default class AddDatePeople extends Component {
@@ -26,7 +26,7 @@ export default class AddDatePeople extends Component {
         let id;
 
 
-        axios.get("/api/get-tops/" + currentUser).then(function (res) {
+        axios.get("http://localhost:4000/api/get-tops/" + currentUser).then(function (res) {
             id = res.data[currentTop]._id;
             console.log(id);
 
@@ -36,7 +36,7 @@ export default class AddDatePeople extends Component {
                 events: this.state.events
             }
             
-            axios.post("/api/update-data/" + id, dataToSend, {
+            axios.post("http://localhost:4000/api/update-data/" + id, dataToSend, {
             }).then(res => {
                 console.log(res);
                 
