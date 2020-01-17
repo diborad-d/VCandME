@@ -54,8 +54,6 @@ const useStyles = makeStyles(theme => ({
 
 let currentUser = localStorage.getItem("currentUser");
 
-
-
 export default function ClosetPage() {
   const classes = useStyles();
   const [value, setValue] = React.useState(2);
@@ -72,30 +70,22 @@ export default function ClosetPage() {
     }
   };
   React.useEffect(() => {
-    console.log("ARRIVED HERE")
     // get bottoms
     axios
       .get("http://localhost:4000/api/get-bottoms/" + currentUser)
       .then(function(res) {
-        // console.log("bottoms", res.data)
-        setBottoms(res.data)
+        setBottoms(res.data);
       })
-      .catch(function(error) {
-        // console.log("*** GET BOTTOMS", error);
-      });
+      .catch(function(error) {});
 
     // get tops
     axios
       .get("http://localhost:4000/api/get-tops/" + currentUser)
       .then(function(res) {
-        console.log("tops", res.data)
-        setTops(res.data)
+        console.log("tops", res.data);
+        setTops(res.data);
       })
-      .catch(function(error) {
-        // console.log("*** GET TOPS", error);
-      });
-
-
+      .catch(function(error) {});
   }, []);
 
   const handleChange = (event, newValue) => {
@@ -116,15 +106,10 @@ export default function ClosetPage() {
           <closetItemCard />
         </Grid>
         <Grid topRightGrid sm style={style.paper}>
-          <Tabs>
-            {tops.length > 0 ? (<ClosetCarousel carouselItems={tops} title={"Your Tops"} />) : (<Tab label="No Tops"/ >)}
-            
-          </Tabs>
+          <Tabs>{tops.length > 0 ? <ClosetCarousel carouselItems={tops} title={"Your Tops"} /> : <Tab label="No Tops" />}</Tabs>
           <Divider />
           <Grid bottomRightGrid sm>
-            <Tabs>
-            {tops.length > 0 ? (<ClosetCarousel carouselItems={bottoms} title={"Your Bottoms"} />) : (<Tab label="No Bottoms"/ >)}
-            </Tabs>
+            <Tabs>{tops.length > 0 ? <ClosetCarousel carouselItems={bottoms} title={"Your Bottoms"} /> : <Tab label="No Bottoms" />}</Tabs>
           </Grid>
         </Grid>
       </Grid>
