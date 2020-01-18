@@ -65,13 +65,14 @@ export default function ClosetPage() {
     <div>
       <Grid container>
         <Grid leftGrid sm spacing={3} style={style.paper}>
-        <Grid item xs={12} style={style.paper} justify="center" >
-          <Tabs>
-            <TextMobileStepper />
-          </Tabs>
+          <Grid item xs={12} style={style.paper} justify="center">
+            <Tabs>
+              <TextMobileStepper />
+            </Tabs>
+          </Grid>
         </Grid>
-         
-        </Grid>
+        <TranferButton />
+        <TranferButton />
         <Grid topRightGrid sm style={style.paper}>
           <Tabs>{tops.length > 0 ? <ClosetCarousel carouselItems={tops} title={"Your Tops"} /> : <Tab label="No Tops" />}</Tabs>
           <Divider />
