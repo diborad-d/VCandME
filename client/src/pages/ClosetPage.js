@@ -20,37 +20,7 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   }
 }));
-// An array of all the garments in the database. Mock this data
-// const garments = [
-//   {
-//     _id: 0,
-//     brand: "American Eagle",
-//     picture: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-//     dateWorn: Date(),
-//     topOrBottom: "top"
-//   },
-//   {
-//     _id: 1,
-//     brand: "American Eagle",
-//     picture: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80",
-//     dateWorn: Date(),
-//     topOrBottom: "top"
-//   },
-//   {
-//     _id: 2,
-//     brand: "American Eagle",
-//     picture: "https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60",
-//     dateWorn: Date(),
-//     topOrBottom: "bottom"
-//   },
-//   {
-//     _id: 3,
-//     brand: "American Eagle",
-//     picture: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80",
-//     dateWorn: Date(),
-//     topOrBottom: "bottom"
-//   }
-// ];
+
 
 let currentUser = localStorage.getItem("currentUser");
 
