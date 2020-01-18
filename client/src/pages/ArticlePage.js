@@ -2,7 +2,7 @@ import React from "react";
 import HomeBtn from "../components/HomeBtn";
 import FileUpload from "../components/files-upload-component";
 import ArticleCarouselItem from "../components/ArticleCarouselItem";
-import articlesInfo from "../articles.json";
+import articlesInfo from "../articles.json.js";
 import Modal from "../components/Modal";
 import Header from "../components/Header.component";
 

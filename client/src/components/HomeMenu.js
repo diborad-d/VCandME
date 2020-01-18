@@ -7,7 +7,7 @@ import{
   Switch,
 } from "react-router-dom";
 import HomeMenuBody from './HomeMenuBody';
-import homeMenuInfo from '../homeMenuBody.json'
+import homeMenuInfo from '../homeMenuBody.json.js'
 
 
 import React from 'react';

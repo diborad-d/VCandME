@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Input, FormBtn, DropDown } from "../components/Form";
-import { Col, Row, Container } from "../components/Grid";
-import SimpleSelect from "../components/TopOrBottomSelect";
+import {Input, FormBtn, DropDown } from "./Form";
+import { Col, Row, Container } from "./Grid";
+import SimpleSelect from "./TopOrBottomSelect";
 
 export default class FilesUploadComponent extends Component {
 
