@@ -1,8 +1,9 @@
 let express = require('express'),
     mongoose = require('mongoose'),
     cors = require('cors'),
-    dbConfig = require('./database/db');
-    path = require('path');
+    dbConfig = require('./database/db'),
+    path = require('path'),
+    env= require('dotenv').config()
 
 const api = require('./routes/item.routes')
 const app = express();
@@ -24,6 +25,7 @@ const routes = require('./routes');
 
 
 //Serve up static assets
+
 if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
   }
