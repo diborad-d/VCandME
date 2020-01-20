@@ -8,7 +8,11 @@ import ClosetCarousel from "../components/ClosetCarousel";
 import closetItemCard from "../components/closetItemCard";
 import Divider from "@material-ui/core/Divider";
 import axios from "axios";
-import TextMobileStepper from "../components/ClosetCarouselTop";
+import TextMobileStepperTop from "../components/ClosetCarouselTop";
+import ClosetCarousleBottom from "../components/ClosetCarouselBottom";
+import TranferButtons from "../components/TransferButtons";
+
+const defaultGarment = { picture: "https://www.graphicsprings.com/filestorage/stencils/7a0dcc38c57d7746e456c1c6af88b735.png?width=500&height=500", brand: "N/A" };
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -27,8 +31,8 @@ let currentUser = localStorage.getItem("currentUser");
 export default function ClosetPage() {
   const classes = useStyles();
   const [value, setValue] = React.useState(2);
-  const [tops, setTops] = React.useState([]);
-  const [bottoms, setBottoms] = React.useState([]);
+  const [tops, setTops] = React.useState([defaultGarment]);
+  const [bottoms, setBottoms] = React.useState([defaultGarment]);
   const style = {
     paper: {
       padding: 5,
@@ -39,24 +43,33 @@ export default function ClosetPage() {
       textAlign: "center"
     }
   };
+
   React.useEffect(() => {
     // get bottoms
     axios
       .get("http://localhost:4000/api/get-bottoms/" + currentUser)
       .then(function(res) {
-        setBottoms(res.data);
+        console.log("bottoms", res.data);
+        setBottoms(res.data.length > 0 ? res.data : [defaultGarment]);
       })
-      .catch(function(error) {});
+      .catch(
+        function(error) {
+          console.log("bottoms error:", error);
+        },
+        [defaultGarment]
+      );
 
     // get tops
     axios
       .get("http://localhost:4000/api/get-tops/" + currentUser)
       .then(function(res) {
         console.log("tops", res.data);
-        setTops(res.data);
+        setTops(res.data.length > 0 ? res.data : [defaultGarment]);
       })
-      .catch(function(error) {});
-  }, []);
+      .catch(function(error) {
+        console.log("tops error:", error);
+      });
+  }, [defaultGarment]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -66,15 +79,16 @@ export default function ClosetPage() {
     <div>
       <Grid container>
         <Grid leftGrid sm spacing={3} style={style.paper}>
-          <TextMobileStepper />
+          <TextMobileStepperTop />
         </Grid>
-        {/* <TranferButton /> */}
-        {/* <TranferButton /> */}
+
+        <TranferButtons />
+        <TranferButtons />
         <Grid topRightGrid sm style={style.paper}>
-          <Tabs>{tops.length > 0 ? <ClosetCarousel carouselItems={tops} title={"Your Tops"} /> : <Tab label="No Tops" />}</Tabs>
+          <ClosetCarousel carouselItems={tops} title={"Your Tops"} />
           <Divider />
           <Grid bottomRightGrid sm>
-            <Tabs>{tops.length > 0 ? <ClosetCarousel carouselItems={bottoms} title={"Your Bottoms"} /> : <Tab label="No Bottoms" />}</Tabs>
+            <ClosetCarousel carouselItems={bottoms} title={"Your Bottoms"} />
           </Grid>
         </Grid>
       </Grid>
