@@ -11,6 +11,7 @@ import axios from "axios";
 import TextMobileStepperTop from "../components/ClosetCarouselTop";
 import ClosetCarousleBottom from "../components/ClosetCarouselBottom";
 import TranferButtons from "../components/TransferButtons";
+import Img from 'react-image';
 
 const defaultGarment = { picture: "https://www.graphicsprings.com/filestorage/stencils/7a0dcc38c57d7746e456c1c6af88b735.png?width=500&height=500", brand: "N/A" };
 
@@ -79,7 +80,7 @@ export default function ClosetPage() {
     <div>
       <Grid container>
         <Grid leftGrid sm spacing={3} style={style.paper}>
-          <TextMobileStepperTop />
+        <Img src= {defaultGarment.picture}/>
         </Grid>
 
         <TranferButtons />

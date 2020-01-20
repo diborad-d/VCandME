@@ -18,8 +18,6 @@ import { FormControlLabel, FormGroup } from "@material-ui/core/";
 import Checkbox from "@material-ui/core/Checkbox";
 import { Input } from "../components/Form";
 
-
-
 const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: 600,
@@ -70,32 +68,6 @@ export default function ClosetCarousel(props) {
   const handleBack = () => {
     setActiveStep(prevActiveStep => prevActiveStep - 1);
   };
-
-  // let currentUser = localStorage.getItem("currentUser");
-  // let userBottoms = [];
-
-  // const pullBottoms = () => {
-  //   axios.get("http://localhost:4000/api/get-bottoms/" + currentUser).then(function (res) {
-  //       userBottoms = res;
-  //       console.log(userBottoms);
-  //       tutorialSteps1 = [];
-
-  //       for( let i=0; i<userBottoms.data.length; i++) {
-  //         let label = userBottoms.data[i].brand + "_" + userBottoms.data[i].color + "_" + userBottoms.data[i].type;
-  //         let imgPath = userBottoms.data[i].picture;
-  //         let oneBottom = {
-  //           label: label,
-  //           imgPath: imgPath
-  //         };
-  //         tutorialSteps1.push(oneBottom);
-  //       }
-  //       console.log(tutorialSteps1);
-  //       maxSteps = tutorialSteps1.length;
-
-  //     }).catch(function (error) {
-  //         console.log(error);
-  //     })
-  // }
 
   return (
     <div className={classes.root}>
