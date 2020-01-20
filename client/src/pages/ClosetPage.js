@@ -8,6 +8,7 @@ import ClosetCarousel from "../components/ClosetCarousel";
 import closetItemCard from "../components/closetItemCard";
 import Divider from "@material-ui/core/Divider";
 import axios from "axios";
+import TextMobileStepper from "../components/ClosetCarouselTop";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -65,14 +66,10 @@ export default function ClosetPage() {
     <div>
       <Grid container>
         <Grid leftGrid sm spacing={3} style={style.paper}>
-          <Grid item xs={12} style={style.paper} justify="center">
-            <Tabs>
-              <TextMobileStepper />
-            </Tabs>
-          </Grid>
+          <TextMobileStepper />
         </Grid>
-        <TranferButton />
-        <TranferButton />
+        {/* <TranferButton /> */}
+        {/* <TranferButton /> */}
         <Grid topRightGrid sm style={style.paper}>
           <Tabs>{tops.length > 0 ? <ClosetCarousel carouselItems={tops} title={"Your Tops"} /> : <Tab label="No Tops" />}</Tabs>
           <Divider />
