@@ -59,7 +59,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function TextBottomStepper() {
+export default function ClosetCarousleBottom() {
 
 
   const classes = useStyles();
