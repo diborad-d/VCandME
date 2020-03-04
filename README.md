@@ -1,2 +1,13 @@
-# DigitalClosetSwapBackend
-Moving code to see if helps heroku deploy
+### VCandME - Digital Closet
+
+## Purpose
+  [] Sort your closet mess free and organized in season, color, style and event.
+ 
+## Front-End
+
+  [] UI/UX - Technologies 
+     - React JS
+     - MUI
+     - React Bootsrap
+     
+
